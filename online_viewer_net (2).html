@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhalls oL Shop - Toko Online Terpercaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variabel CSS */
+        :root {
+            --primary: #3366CC;
+            --secondary: #333333;
+            --accent: #FF9900;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        /* Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #2855b8;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background-color: #e08600;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 10px auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-social a {
+            color: var(--white);
+            transition: color 0.3s;
+        }
+
+        .header-social a:hover {
+            color: var(--accent);
+        }
+
+        .header-main {
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .search-bar {
+            flex: 0 0 40%;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .header-action-item i {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .cart-count {
+            background-color: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .nav {
+            background-color: var(--primary);
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav li {
+            position: relative;
+        }
+
+        .nav a {
+            color: var(--white);
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #2855b8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Featured Categories */
+        .categories {
+            padding: 60px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .category-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .category-content h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Featured Products */
+        .products {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .old-price {
+            font-size: 14px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+            color: #ffc107;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .wishlist-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--gray);
+            transition: all 0.3s;
+        }
+
+        .wishlist-btn:hover {
+            color: #e91e63;
+            border-color: #e91e63;
+        }
+
+        /* Promo Section */
+        .promo {
+            padding: 80px 0;
+            background: linear-gradient(to right, #3366CC, #294c9a);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .promo h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .promo p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--light-gray);
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-details h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-details p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 60px 0;
+            background-color: var(--secondary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+
+        .newsletter-form button {
+            padding: 12px 20px;
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e08600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 15px;
+            color: var(--light-gray);
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-main {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .search-bar {
+                flex: 0 0 80%;
+                order: 3;
+                width: 100%;
+            }
+            
+            .nav ul {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 4px;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-contact {
+                justify-content: center;
+            }
+            
+            .header-social {
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .product-grid, .category-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container header-top-content">
+                <div class="header-contact">
+                    <span><i class="fas fa-phone"></i> +62 123 456 789</span>
+                    <span><i class="fas fa-envelope"></i> info@zhallsshop.com</span>
+                </div>
+                <div class="header-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container header-main">
+            <div class="logo">
+                <h1>Zhalls <span>oL Shop</span></h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Cari produk...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <div class="header-action-item">
+                    <i class="fas fa-user"></i>
+                    <span>Akun</span>
+                </div>
+                <div class="header-action-item" style="position: relative;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Keranjang</span>
+                    <span class="cart-count">3</span>
+                </div>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Produk</a></li>
+                <li><a href="#">Kategori</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Kontak</a></li>
+                <li><a href="#">Promo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Selamat Datang di Zhalls oL Shop</h2>
+            <p>Temukan berbagai produk berkualitas dengan harga terbaik untuk kebutuhan Anda</p>
+            <a href="#" class="btn btn-accent">Belanja Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Kategori Populer</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Fashion">
+                    <div class="category-content">
+                        <h3>Fashion</h3>
+                        <a href="#" class="btn btn-primary">Jelajahi</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Elektronik">
+                    <div class="category-content">
+                        <h3>Elektronik</h3>
+                        <a href="#" class="btn btn-primary">Jelajahi</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Hobi">
+                    <div class="category-content">
+                        <h3>Hobi</h3>
+                        <a href="#" class="btn btn-primary">Jelajahi</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kecantikan">
+                    <div class="category-content">
+                        <h3>Kecantikan</h3>
+                        <a href="#" class="btn btn-primary">Jelajahi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Unggulan</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Produk 1">
+                        <span class="product-badge">Sale</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tas Fashion Modern</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 299.000</span>
+                            <span class="old-price">Rp 399.000</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart">Tambah Keranjang</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Produk 2">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sepatu Sport Premium</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 599.000</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(42)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart">Tambah Keranjang</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Produk 3">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Smart Watch Series 5</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 1.299.000</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart">Tambah Keranjang</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Produk 4">
+                        <span class="product-badge">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Headphone Wireless</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 499.000</span>
+                            <span class="old-price">Rp 649.000</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(56)</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart">Tambah Keranjang</button>
+                            <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo">
+        <div class="container">
+            <h2>Sale Akhir Tahun</h2>
+            <p>Dapatkan diskon hingga 50% untuk berbagai produk pilihan. Jangan lewatkan kesempatan ini!</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number">02</div>
+                    <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">12</div>
+                    <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">45</div>
+                    <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number">30</div>
+                    <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+            <a href="#" class="btn btn-accent">Lihat Promo</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Pelanggan</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Produknya berkualitas dan pengiriman sangat cepat. Seller juga ramah dan responsif. Pasti akan belanja lagi di Zhalls oL Shop.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Customer 1">
+                        </div>
+                        <div class="author-details">
+                            <h4>Diana Putri</h4>
+                            <p>Jakarta</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Harga kompetitif dan produk asli. Packing aman dan rapi. Recommended banget untuk belanja online.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer 2">
+                        </div>
+                        <div class="author-details">
+                            <h4>Budi Santoso</h4>
+                            <p>Bandung</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Barang sesuai deskripsi, kualitas bagus, dan harganya terjangkau. Proses checkout juga mudah dan cepat.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer 3">
+                        </div>
+                        <div class="author-details">
+                            <h4>Rina Wijaya</h4>
+                            <p>Surabaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container newsletter-content">
+            <h2>Berlangganan Newsletter</h2>
+            <p>Dapatkan informasi promo dan produk terbaru dengan berlangganan newsletter kami</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Masukkan email Anda">
+                <button type="submit">Berlangganan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Zhalls oL Shop</h3>
+                    <p>Toko online terpercaya dengan berbagai produk berkualitas dan harga terbaik.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Karir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan Pelanggan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Cara Pembelian</a></li>
+                        <li><a href="#">Pengembalian</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Status Pesanan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Jl. Contoh No. 123, Jakarta</li>
+                        <li><i class="fas fa-phone"></i> +62 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@zhallsshop.com</li>
+                        <li><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Zhalls oL Shop. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple countdown timer for promo section
+        function updateCountdown() {
+            const days = document.querySelector('.countdown-item:nth-child(1) .countdown-number');
+            const hours = document.querySelector('.countdown-item:nth-child(2) .countdown-number');
+            const minutes = document.querySelector('.countdown-item:nth-child(3) .countdown-number');
+            const seconds = document.querySelector('.countdown-item:nth-child(4) .countdown-number');
+            
+            let sec = parseInt(seconds.textContent);
+            let min = parseInt(minutes.textContent);
+            let hr = parseInt(hours.textContent);
+            let d = parseInt(days.textContent);
+            
+            sec--;
+            
+            if (sec < 0) {
+                sec = 59;
+                min--;
+                
+                if (min < 0) {
+                    min = 59;
+                    hr--;
+                    
+                    if (hr < 0) {
+                        hr = 23;
+                        d--;
+                        
+                        if (d < 0) {
+                            d = 0;
+                            hr = 0;
+                            min = 0;
+                            sec = 0;
+                        }
+                    }
+                }
+            }
+            
+            seconds.textContent = sec.toString().padStart(2, '0');
+            minutes.textContent = min.toString().padStart(2, '0');
+            hours.textContent = hr.toString().padStart(2, '0');
+            days.textContent = d.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                count++;
+                cartCount.textContent = count;
+                
+                this.textContent = "Ditambahkan";
+                this.style.backgroundColor = "#28a745";
+                
+                setTimeout(() => {
+                    this.textContent = "Tambah Keranjang";
+                    this.style.backgroundColor = "";
+                }, 1500);
+            });
+        });
+        
+        // Wishlist toggle
+        const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    this.style.color = '#e91e63';
+                    this.style.borderColor = '#e91e63';
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    this.style.color = '';
+                    this.style.borderColor = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
